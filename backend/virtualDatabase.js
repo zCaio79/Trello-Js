@@ -21,8 +21,8 @@ export class virtualDatabase {
             "name": name,
             "description": description,
             "spot": 0,
-            "create-at": formattedDate,
-            "deploy-at": undefined
+            "createAt": formattedDate,
+            "deployAt": undefined
         }
 
         this.#tasks.set(id, task)
