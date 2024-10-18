@@ -1,0 +1,15 @@
+POST http://localhost:3333/tasks
+Content-Type: application/json
+
+{
+    "name": "jamal",
+    "description": "daocu i senta napica"
+}
+
+###
+
+GET http://localhost:3333/tasks
+
+
+###
+DELETE http://localhost:3333/tasks/3c041ced-c583-4399-83dc-f6e03d950060
