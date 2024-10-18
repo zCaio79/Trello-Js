@@ -30,10 +30,29 @@ server.post("/tasks", (request, reply) => {
 
 })
 
+server.patch("/tasks/:id", (request, reply) => {
+    const { id } = request.params;
+    const { newSpot } = request.body;
+
+    try {
+        database.updateSpotTask(id, newSpot);
+        return reply.status(200).send();
+    } catch (error) {
+        return reply.status(404).send({ error: error.message });
+    }
+});
+
+
 server.delete("/tasks/:id", (request, reply) => {
 
     const { id } = request.params
-    database.deleteTask(id)
 
-    return reply.status(200).send()
+    try{
+        database.deleteTask(id)
+        return reply.status(200).send();
+    } catch (error) {
+        return reply.status(404).send({ error: error.message });
+    }
+
+    
 })

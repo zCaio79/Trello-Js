@@ -1,15 +1,27 @@
 POST http://localhost:3333/tasks
 Content-Type: application/json
 
+//body
 {
-    "name": "jamal",
-    "description": "daocu i senta napica"
+    "name": "xxxx",
+    "description": "xxxxxxxxxx"
 }
 
 ###
 
 GET http://localhost:3333/tasks
 
+###
+//Tem q passar o ID
+PATCH http://localhost:3333/tasks/
+Content-Type: application/json
+
+//body
+{
+    "newSpot": 3
+}
+
 
 ###
-DELETE http://localhost:3333/tasks/3c041ced-c583-4399-83dc-f6e03d950060
+//Tem q passar o ID
+DELETE http://localhost:3333/tasks/

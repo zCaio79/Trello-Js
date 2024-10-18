@@ -1,3 +1,4 @@
+import { error } from "node:console";
 import { randomUUID } from "node:crypto"
 
 export class virtualDatabase {
@@ -26,6 +27,7 @@ export class virtualDatabase {
         }
 
         this.#tasks.set(id, task)
+        console.log("sucess")
 
     }
 
@@ -42,7 +44,30 @@ export class virtualDatabase {
     }
 
     deleteTask(id){
+
+        if(!this.#tasks.has(id)){
+
+            throw new Error("Task não encontrada")
+        }
         this.#tasks.delete(id)
+        console.log("sucess")
+        return true
+
+    }
+
+    updateSpotTask(id, newSpot){
+        const task = this.#tasks.get(id)
+
+        if(!task){
+            throw new Error("Task não encontrada")
+        }
+        this.#tasks.set(id, {
+            ...task,
+            spot: newSpot
+        })
+        console.log("sucess")
+        return true
+        
     }
 
 }
